@@ -54,8 +54,50 @@ namespace ScrabbleSolver
             return;
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="playableLetters"></param>
         public void calculateBestMove(params char?[] playableLetters)
         {
+        }
+
+        public void debugRowTest()
+        {
+            var rowFragments = new List<WordSegment>();
+            WordSegment currentFragment = null;
+
+            // Starting with the first row
+            for (int x = 0; x < 15; x++)
+            {
+                char? character = _board[0, x];
+
+                if (character == null)
+                {
+                    if (currentFragment != null)
+                    {
+                        rowFragments.Add(currentFragment);
+                    }
+
+                    currentFragment = null;
+                    continue;
+                }
+
+                if (currentFragment != null)
+                {
+                    currentFragment.Letters += _board[6, x];
+                    continue;
+                }
+                else
+                {
+                    currentFragment = new WordSegment
+                    {
+                        StartPos = x,
+                        Letters = _board[6, x]
+                    };
+                }
+            }
         }
     }
 }
