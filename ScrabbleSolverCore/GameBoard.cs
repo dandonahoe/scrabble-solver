@@ -34,10 +34,10 @@ namespace ScrabbleSolver
         public void addLetter(LetterPosition letterPosition)
         {
             if (letterPosition.X < 0 || letterPosition.Y > BOARD_WIDTH)
-                throw new PrettyException("The value {0} must be in the range of 0-14", x);
+                throw new PrettyException("The value {0} must be in the range of 0-14", letterPosition.X);
 
             if (letterPosition.Y < 0 || letterPosition.Y > BOARD_WIDTH)
-                throw new PrettyException("The value {0} must be in the range of 0-14", x);
+                throw new PrettyException("The value {0} must be in the range of 0-14", letterPosition.Y);
 
             if (_board[letterPosition.X, letterPosition.Y] != null)
                 throw new PrettyException("The tile [{0},{1}] already contains a letter ({2})", 
