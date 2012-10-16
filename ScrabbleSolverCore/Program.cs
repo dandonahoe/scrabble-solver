@@ -1,5 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace ScrabbleSolver
 {
@@ -9,7 +11,7 @@ namespace ScrabbleSolver
         public string Letters = string.Empty;
     }
 
-    static class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -70,4 +72,3 @@ namespace ScrabbleSolver
         }
     }
 }
-
