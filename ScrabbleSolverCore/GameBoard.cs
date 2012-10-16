@@ -165,21 +165,26 @@ namespace ScrabbleSolver
             var possiblePlays = new List<object>();
 
             for (int col = 0; col < BOARD_WIDTH; col++)
-            {
                 possiblePlays.AddRange(AnalyzePossiblePlays(GetLettersFromRow(col)));
-            }
 
             for (int row = 0; row < BOARD_HEIGHT; row++)
-            {
                 possiblePlays.AddRange(AnalyzePossiblePlays(GetLettersFromCol(row)));
-            }
 
             return;
         }
 
         private List<object> AnalyzePossiblePlays(char[] lineLetters)
         {
+            var queryThing = new List<string>();
+
             var possiblePlays = new List<object>();
+
+            for (int a = 0; a < lineLetters.Length; a++)
+            {
+                char currentLetter = lineLetters[a];
+
+                if(
+            }
 
             return possiblePlays;
         }
