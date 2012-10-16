@@ -1,0 +1,5 @@
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\bin\Debug\ScrabbleSolverCore.exe
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\bin\Debug\ScrabbleSolverCore.pdb
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\obj\x86\Debug\ScrabbleSolverCore.exe
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\obj\x86\Debug\ScrabbleSolverCore.pdb

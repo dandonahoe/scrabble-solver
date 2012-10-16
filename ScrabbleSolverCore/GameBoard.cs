@@ -53,5 +53,9 @@ namespace ScrabbleSolver
 
             return;
         }
+
+        public void calculateBestMove(params char?[] playableLetters)
+        {
+        }
     }
 }
