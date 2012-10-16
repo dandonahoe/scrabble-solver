@@ -12,11 +12,9 @@ namespace ScrabbleSolver
         {
             try
             {
-                // must have at least one argument (the path to the game board)
-                // 
-                if (args.Length < 1)
+                if (args.Length != 2)
                 {
-                    Console.WriteLine("ScrabbleSolver.exe [path to game board] [letters]");
+                    Console.WriteLine("ScrabbleSolver.exe [path to game board] [letters, no spaces]");
                     return;
                 }
 
@@ -30,13 +28,12 @@ namespace ScrabbleSolver
                 }
 
                 // grab all the playable characters
-                var playableLetters = new char[args.Length - 1];
+                char[] playableLetters = args[1].ToCharArray();
 
-                for (int a = 1; a < args.Length - 1; a++)
-                    playableLetters[a - 1] = args[a].ToChar();
-
+                // Initalize the game board
                 var gameBoard = new GameBoard(boardFileName);
 
+                // calculate the best move
                 gameBoard.calculateBestMove(playableLetters);
             }
             catch (PrettyException exc)
