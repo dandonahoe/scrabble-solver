@@ -5,12 +5,6 @@ using System.Text;
 
 namespace ScrabbleSolver
 {
-    class CharFragments
-    {
-        public int StartPos = 0;
-        public string Letters = string.Empty;
-    }
-
     class Program
     {
         static void Main(string[] args)
@@ -34,10 +28,8 @@ namespace ScrabbleSolver
                 {"", "", "", "",  "",  "",  "",  "", "",  "", "",  "", "",  "", ""},
             };
 
-            var rowFragments = new List<CharFragments>();
-            CharFragments currentFragment = null;
-
-            bool onWord = false;
+            var rowFragments = new List<WordSegment>();
+            WordSegment currentFragment = null;
 
             for (int x = 0; x < 15; x++)
             {
@@ -51,7 +43,6 @@ namespace ScrabbleSolver
                     }
 
                     currentFragment = null;
-
                     continue;
                 }
 
@@ -62,7 +53,7 @@ namespace ScrabbleSolver
                 }
                 else
                 {
-                    currentFragment = new CharFragments
+                    currentFragment = new WordSegment
                     {
                         StartPos = x,
                         Letters = board[6, x]
