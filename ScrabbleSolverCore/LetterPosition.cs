@@ -7,6 +7,10 @@ namespace ScrabbleSolver
 {
     class LetterPosition
     {
+        public LetterPosition()
+        {
+        }
+
         // The letter being played
         public char Letter { get; set; }
 
@@ -16,8 +20,5 @@ namespace ScrabbleSolver
         /// </summary>
         public byte X { get; set; }
         public byte Y { get; set; }
-
-        // If this letter 
-        public bool IsWildcard;
     }
 }

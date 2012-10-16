@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 namespace ScrabbleSolver
 {
@@ -9,56 +10,42 @@ namespace ScrabbleSolver
     {
         static void Main(string[] args)
         {
-            string[,] board = new string[15, 15] 
-            { 
-                {"", "", "", "",  "",  "",  "",  "",   "",  "", "",  "", "",  "", ""},
-                {"", "", "", "",  "",  "",  "",  "",   "",  "", "",  "", "",  "", ""},
-                {"", "", "", "",  "",  "",  "O",  "",  "",  "", "",  "", "",  "", ""},
-                {"", "", "", "",  "",  "",  "B", "O", "D",  "", "",  "", "",  "", ""},
-                {"", "", "", "",  "G", "O", "O", "N",  "", "",  "", "",  "", "", ""},
-                {"", "", "", "",  "O", "",  "E",  "",  "",  "", "",  "", "",  "", ""},
-                {"", "", "", "",  "A", "",  "S",  "E",  "E",  "", "",  "", "",  "", ""},
-                {"", "", "", "",  "L", "",  "",  "",  "", "",  "", "",  "", "", ""},
-                {"", "", "", "A", "I", "",  "",  "",  "", "",  "", "",  "", "", ""},
-                {"", "", "", "R", "E", "",  "",  "",  "", "",  "", "",  "", "", ""},
-                {"", "", "", "T", "",  "",  "",  "",  "", "",  "", "",  "", "", ""},
-                {"", "", "", "",  "",  "",  "",  "", "",  "", "",  "", "",  "", ""},
-                {"", "", "", "",  "",  "",  "",  "", "",  "", "",  "", "",  "", ""},
-                {"", "", "", "",  "",  "",  "",  "", "",  "", "",  "", "",  "", ""},
-                {"", "", "", "",  "",  "",  "",  "", "",  "", "",  "", "",  "", ""},
-            };
-
-            var rowFragments = new List<WordSegment>();
-            WordSegment currentFragment = null;
-
-            for (int x = 0; x < 15; x++)
+            try
             {
-                string character = board[6, x];
-
-                if (character == string.Empty)
+                // must have at least one argument (the path to the game board)
+                // 
+                if (args.Length < 1)
                 {
-                    if (currentFragment != null)
-                    {
-                        rowFragments.Add(currentFragment);
-                    }
-
-                    currentFragment = null;
-                    continue;
+                    Console.WriteLine("ScrabbleSolver.exe [path to game board] [letters]");
+                    return;
                 }
 
-                if (currentFragment != null)
+                // verify that the game board file actually exists
+                string boardFileName = args[0];
+
+                if (File.Exists(boardFileName) == false)
                 {
-                    currentFragment.Letters += board[6, x];
-                    continue;
+                    Console.WriteLine("File named '{0}' not found", boardFileName);
+                    return;
                 }
-                else
-                {
-                    currentFragment = new WordSegment
-                    {
-                        StartPos = x,
-                        Letters = board[6, x]
-                    };
-                }
+
+                // grab all the playable characters
+                var playableLetters = new char[args.Length - 1];
+
+                for (int a = 1; a < args.Length - 1; a++)
+                    playableLetters[a - 1] = args[a].ToChar();
+
+                var gameBoard = new GameBoard(boardFileName);
+
+                gameBoard.calculateBestMove(playableLetters);
+            }
+            catch (PrettyException exc)
+            {
+                Console.WriteLine("Unrecoverable error: {0}", exc.Message);
+            }
+            catch(Exception exc)
+            {
+                Console.WriteLine("Unhandled exception occured: {0}", exc.Message);
             }
         }
     }

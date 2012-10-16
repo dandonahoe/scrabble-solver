@@ -1,0 +1,7 @@
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\bin\Release\SampleBoards\BlankBoard.txt
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\bin\Release\SampleBoards\Board01.txt
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\bin\Release\ScrabbleSolverCore.exe
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\bin\Release\ScrabbleSolverCore.pdb
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\obj\x86\Release\ScrabbleSolverCore.exe
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\obj\x86\Release\ScrabbleSolverCore.pdb

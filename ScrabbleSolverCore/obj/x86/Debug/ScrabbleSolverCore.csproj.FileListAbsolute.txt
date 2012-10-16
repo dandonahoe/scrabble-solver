@@ -3,3 +3,5 @@ C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\bin\Debug
 C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\obj\x86\Debug\ScrabbleSolverCore.exe
 C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\obj\x86\Debug\ScrabbleSolverCore.pdb
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\bin\Debug\SampleBoards\BlankBoard.txt
+C:\Users\KoofersDan\Documents\GitHub\ScrabbleSolver\ScrabbleSolverCore\bin\Debug\SampleBoards\Board01.txt
