@@ -184,13 +184,6 @@ namespace ScrabbleSolver
             return possiblePlays;
         }
 
-        private List<object> AnalyzeCharacterString(char[] tileLetters)
-        {
-            var possiblePlays = new List<object>();
-
-            return possiblePlays;
-        }
-
         private char[] GetLettersFromCol(int col)
         {
             var tileLetters = new char[BOARD_HEIGHT];
