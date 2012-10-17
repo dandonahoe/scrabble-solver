@@ -1,2 +1,6 @@
 *.exe
 *.pdb
+*.sln
+/ScrabbleSolver/ScrabbleSolverCore/obj/*
+/ScrabbleSolver/ScrabbleSolverCore/bin/*
+/ScrabbleSolver/ScrabbleSolverCore/ScrabbleSolverCore.csproj.user
